@@ -1,0 +1,15 @@
+.fondoDegradado {
+    background-image: linear-gradient(to top, #e02222, #000000);
+}
+
+#footers {
+    padding: auto;
+    font-size: large;
+    color: red;
+    line-height: 2;
+    text-align: center;
+}
+
+.enlaces {
+    color: red;
+}
