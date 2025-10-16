@@ -12,7 +12,8 @@ const detalleImgCard = document.getElementById('detalleImg');
 const modalNombre = document.getElementById('modalNombre');
 const modalDesc = document.getElementById('modalDesc');
 const modalImg = document.getElementById('modalImg');
-const detalleModal = new bootstrap.Modal(document.getElementById('detalleModal'));
+const detalleModalEl = document.getElementById('detalleModal');
+const detalleModal = detalleModalEl ? new bootstrap.Modal(detalleModalEl) : null;
 
 const botonesDetalles = document.querySelectorAll('.btn-filter');
 
@@ -20,7 +21,6 @@ botonesDetalles.forEach(boton => {
     boton.addEventListener('click', async() => {
         const id = boton.getAttribute('data-id');
 
-        // Traer datos desde Supabase
         const { data, error } = await supabase
             .from('Personajes')
             .select('*')
@@ -32,7 +32,6 @@ botonesDetalles.forEach(boton => {
             return;
         }
 
-        // Construir ruta de imagen
         const nombreImg = data.nombre
             .toLowerCase()
             .normalize('NFD')
@@ -43,14 +42,14 @@ botonesDetalles.forEach(boton => {
 
         const imgSrc = `assets/img/full_${nombreImg}.png`;
 
-        if (window.innerWidth >= 992 && detalleNombreCard) {
-            // Desktop → mostrar en card derecha
+        if (detalleNombreCard && detalleDescCard && detalleImgCard) {
             detalleNombreCard.textContent = data.nombre;
             detalleDescCard.textContent = data.descripcion;
             detalleImgCard.src = imgSrc;
             detalleImgCard.alt = data.nombre;
-        } else if (detalleModal) {
-            // Móvil → mostrar modal
+        }
+
+        if (detalleModal && (!detalleNombreCard || window.innerWidth < 992)) {
             modalNombre.textContent = data.nombre;
             modalDesc.textContent = data.descripcion;
             modalImg.src = imgSrc;
