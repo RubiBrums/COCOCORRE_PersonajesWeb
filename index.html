@@ -150,13 +150,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-4 d-none d-lg-block">
                     <div class="position-sticky top-0 pt-4">
                         <div class="card mx-auto" id="detalleCard" style="max-width: 30rem;">
                             <img id="detalleImg" src="assets/img/placeholder.png" class="card-img-top img-fluid" alt="imagen">
                             <div class="card-body text-center">
                                 <h5 id="detalleNombre" class="card-title">Nombre del personaje</h5>
                                 <p id="detalleDesc" class="card-text">¡Haz click en un personaje para saber más!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="detalleModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content text-center">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalNombre">Nombre del personaje</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img id="modalImg" src="assets/img/placeholder.png" class="img-fluid mb-3" alt="imagen">
+                                <p id="modalDesc">Descripción del personaje</p>
                             </div>
                         </div>
                     </div>

@@ -5,47 +5,60 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-const detalleNombre = document.getElementById('detalleNombre');
-const detalleDesc = document.getElementById('detalleDesc');
-const detalleImg = document.getElementById('detalleImg');
+const detalleNombreCard = document.getElementById('detalleNombre');
+const detalleDescCard = document.getElementById('detalleDesc');
+const detalleImgCard = document.getElementById('detalleImg');
+
+const modalNombre = document.getElementById('modalNombre');
+const modalDesc = document.getElementById('modalDesc');
+const modalImg = document.getElementById('modalImg');
+const detalleModal = new bootstrap.Modal(document.getElementById('detalleModal'));
 
 const botonesDetalles = document.querySelectorAll('.btn-filter');
+
 botonesDetalles.forEach(boton => {
     boton.addEventListener('click', async() => {
         const id = boton.getAttribute('data-id');
-        await mostrarDetalles(id);
+
+        // Traer datos desde Supabase
+        const { data, error } = await supabase
+            .from('Personajes')
+            .select('*')
+            .eq('id', id)
+            .single();
+
+        if (error || !data) {
+            console.error('Error o sin datos.', error);
+            return;
+        }
+
+        // Construir ruta de imagen
+        const nombreImg = data.nombre
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replaceAll(' ', '')
+            .replaceAll('-', '')
+            .replaceAll('_', '');
+
+        const imgSrc = `assets/img/full_${nombreImg}.png`;
+
+        if (window.innerWidth >= 992 && detalleNombreCard) {
+            // Desktop → mostrar en card derecha
+            detalleNombreCard.textContent = data.nombre;
+            detalleDescCard.textContent = data.descripcion;
+            detalleImgCard.src = imgSrc;
+            detalleImgCard.alt = data.nombre;
+        } else if (detalleModal) {
+            // Móvil → mostrar modal
+            modalNombre.textContent = data.nombre;
+            modalDesc.textContent = data.descripcion;
+            modalImg.src = imgSrc;
+            modalImg.alt = data.nombre;
+            detalleModal.show();
+        }
     });
 });
-
-async function mostrarDetalles(id) {
-    const { data, error } = await supabase
-        .from('Personajes')
-        .select('*')
-        .eq('id', id)
-        .single();
-
-    if (error || !data) {
-        console.error('Error o sin datos.', error);
-        detalleNombre.textContent = "No encontrado.";
-        detalleDesc.textContent = "No hay información disponible.";
-        detalleImg.src = "assets/img/placeholder.png";
-        return;
-    }
-
-    detalleNombre.textContent = data.nombre;
-    detalleDesc.textContent = data.descripcion;
-
-    const nombreImg = data.nombre
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .replaceAll(' ', '')
-        .replaceAll('-', '')
-        .replaceAll('_', '');
-
-    detalleImg.src = `assets/img/full_${nombreImg}.png`;
-    detalleImg.alt = data.nombre;
-}
 
 const enlacesFiltro = document.querySelectorAll('.nav-filter');
 const cartas = document.querySelectorAll('#contenedorCartas .card');
