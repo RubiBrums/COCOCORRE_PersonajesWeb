@@ -3,7 +3,6 @@
 }
 
 #footers {
-    padding: auto;
     font-size: large;
     color: red;
     line-height: 2;
@@ -12,4 +11,20 @@
 
 .enlaces {
     color: red;
+    text-decoration: none;
+}
+
+.enlaces:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.card img {
+    object-fit: cover;
+}
+
+@media (max-width: 992px) {
+    #detalleCard {
+        margin-top: 2rem;
+    }
 }
