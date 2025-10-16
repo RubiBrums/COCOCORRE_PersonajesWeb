@@ -4,27 +4,16 @@
 
 #footers {
     font-size: large;
-    color: red;
+    color: rgb(0, 0, 0);
     line-height: 2;
     text-align: center;
 }
 
 .enlaces {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 0, 0);
     text-decoration: none;
-}
-
-.enlaces:hover {
-    color: white;
-    text-decoration: underline;
 }
 
 .card img {
     object-fit: cover;
-}
-
-@media (max-width: 992px) {
-    #detalleCard {
-        margin-top: 2rem;
-    }
 }
