@@ -63,3 +63,11 @@ enlacesFiltro.forEach(enlace => {
         });
     });
 });
+
+const nombreImg = data.nombre
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replaceAll(' ', '')
+    .replaceAll('-', '')
+    .replaceAll('_', '');
