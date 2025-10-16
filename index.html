@@ -4,15 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>¡COCOCORRE! Conoce a los personajes</title>
-    <link rel="stylesheet" href="assets\style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar-example" style="background-color: black;">
     <div class="p-3 mb-2 fondoDegradado text-white">
         <header>
-            <img src="assets\img\Header.png" class="img-fluid" alt="cococorre header">
+            <img src="assets/img/Header.png" class="img-fluid" alt="cococorre header">
         </header>
+
         <section>
             <nav aria-label="...">
                 <ul class="pagination pagination-lg justify-content-center">
@@ -20,22 +21,22 @@
                         <a class="page-link nav-filter" data-filter="todos" href="#" style="background-color: black; border-color: white; color: white;">Todos los personajes</a>
                     </li>
                     <li class="page-item"><a class="page-link nav-filter" data-filter="protagonista" href="#" style="background-color: black; border-color: white; color: white;">Protagonista</a></li>
-                    <li class="page-item"><a class="page-link nav-filter" data-filter="npc" href="#" style="background-color: black; border-color: white;color: white;">NPCs</a></li>
-                    <li class="page-item"><a class="page-link nav-filter" data-filter="enemigo" href="#" style="background-color: black; border-color: white;color: white;">Enemigos</a></li>
-                    <li class="page-item"><a class="page-link nav-filter" data-filter="jefe" href="#" style="background-color: black; border-color: white;color: white;">Jefes</a></li>
-
+                    <li class="page-item"><a class="page-link nav-filter" data-filter="npc" href="#" style="background-color: black; border-color: white; color: white;">NPCs</a></li>
+                    <li class="page-item"><a class="page-link nav-filter" data-filter="enemigo" href="#" style="background-color: black; border-color: white; color: white;">Enemigos</a></li>
+                    <li class="page-item"><a class="page-link nav-filter" data-filter="jefe" href="#" style="background-color: black; border-color: white; color: white;">Jefes</a></li>
                 </ul>
             </nav>
         </section>
+
         <main>
             <div style="grid-template-columns: 2fr 1fr;" class="d-grid gap-1">
-                <div class=" cartas p-2">
+                <div class="cartas p-2">
                     <div class="container text-center">
                         <div class="row g-2" id="contenedorCartas">
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card protagonista" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailplayer.png" class="card-img-top" alt="helen">
+                                        <img src="assets/img/thumbnailplayer.png" class="card-img-top" alt="helen">
                                         <div class="card-body">
                                             <h5 class="card-title">Helen</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="1">Más detalles</button>
@@ -43,82 +44,83 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card npc" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailnpc1.png" class="card-img-top" alt="Gallardo">
+                                        <img src="assets/img/thumbnailnpc1.png" class="card-img-top" alt="Gallardo">
                                         <div class="card-body">
                                             <h5 class="card-title">Gallardo</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="2">Más detalles</button>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card enemigo" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailenemy1.png" class="card-img-top" alt="minionObrero">
+                                        <img src="assets/img/thumbnailenemy1.png" class="card-img-top" alt="minionObrero">
                                         <div class="card-body">
                                             <h5 class="card-title">Minion obrero</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="7">Más detalles</button>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card enemigo" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailenemy2.png" class="card-img-top" alt="minionOficinista">
+                                        <img src="assets/img/thumbnailenemy2.png" class="card-img-top" alt="minionOficinista">
                                         <div class="card-body">
                                             <h5 class="card-title">Minion oficinista</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="8">Más detalles</button>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card enemigo" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailenemy3.png" class="card-img-top" alt="minionCarnicero">
+                                        <img src="assets/img/thumbnailenemy3.png" class="card-img-top" alt="minionCarnicero">
                                         <div class="card-body">
                                             <h5 class="card-title">Minion carnicero</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="9">Más detalles</button>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card npc" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailnpc2.png" class="card-img-top" alt="ranaRadio">
+                                        <img src="assets/img/thumbnailnpc2.png" class="card-img-top" alt="ranaRadio">
                                         <div class="card-body">
-                                            <h5 class="card-title">Rana radio</h5>
+                                            <h5 class="card-title">Rana Radio</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="3">Más detalles</button>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card npc" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailnpc3.png" class="card-img-top" alt="charlie">
+                                        <img src="assets/img/thumbnailnpc3.png" class="card-img-top" alt="charlie">
                                         <div class="card-body">
                                             <h5 class="card-title">Charlie</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="4">Más detalles</button>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card npc" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailnpc4.png" class="card-img-top" alt="rosita">
+                                        <img src="assets/img/thumbnailnpc4.png" class="card-img-top" alt="rosita">
                                         <div class="card-body">
                                             <h5 class="card-title">Rosita</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="12">Más detalles</button>
@@ -126,46 +128,47 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card jefe" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailboss1.png" class="card-img-top" alt="Granjera Maggie">
+                                        <img src="assets/img/thumbnailboss1.png" class="card-img-top" alt="granjeraMaggie">
                                         <div class="card-body">
                                             <h5 class="card-title">Granjera Maggie</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="5">Más detalles</button>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card jefe" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailboss2.png" class="card-img-top" alt="trucker">
+                                        <img src="assets/img/thumbnailboss2.png" class="card-img-top" alt="trucker">
                                         <div class="card-body">
                                             <h5 class="card-title">Trucker</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="6">Más detalles</button>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card jefe" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailboss3.png" class="card-img-top" alt="bossy">
+                                        <img src="assets/img/thumbnailboss3.png" class="card-img-top" alt="bossy">
                                         <div class="card-body">
                                             <h5 class="card-title">Bossy</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="10">Más detalles</button>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-6">
                                 <div class="p-3">
                                     <div class="card jefe" style="width: 18rem;">
-                                        <img src="assets\img\thumbnailboss4.png" class="card-img-top" alt="carnicero">
+                                        <img src="assets/img/thumbnailboss4.png" class="card-img-top" alt="carnicero">
                                         <div class="card-body">
                                             <h5 class="card-title">Carnicero</h5>
                                             <button class="btn btn-sm btn-outline-secondary btn-filter" data-id="11">Más detalles</button>
@@ -175,8 +178,8 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
+
                 <div class="p-3">
                     <div class="position-sticky top-0 pt-3" id="navbar-example">
                         <div class="card" id="detalleCard" style="width: 30rem;">
@@ -188,13 +191,15 @@
                         </div>
                     </div>
                 </div>
-
         </main>
         </div>
 
         <footer id="footers">
             <p>© 2025 CubiPoint. Todos los derechos reservados.</p>
-            <p>Síguenos en: <a href="https://www.instagram.com/cubipoint" class="enlaces" target="_blank" rel="noopener noreferrer"> Instagram</a> | <a href="https://cubipoint.itch.io" class="enlaces" target="_blank" rel="noopener noreferrer">Itchio</a></p>
+            <p>Síguenos en:
+                <a href="https://www.instagram.com/cubipoint" class="enlaces" target="_blank" rel="noopener noreferrer">Instagram</a> |
+                <a href="https://cubipoint.itch.io" class="enlaces" target="_blank" rel="noopener noreferrer">Itchio</a>
+            </p>
         </footer>
 
         <script type="module" src="assets/script.js"></script>
