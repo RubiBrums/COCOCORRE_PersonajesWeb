@@ -43,6 +43,7 @@ async function mostrarDetalles(id) {
 const enlacesFiltro = document.querySelectorAll('.nav-filter');
 const cartas = document.querySelectorAll('#contenedorCartas .card');
 
+
 enlacesFiltro.forEach(enlace => {
     enlace.addEventListener('click', (e) => {
         e.preventDefault();
