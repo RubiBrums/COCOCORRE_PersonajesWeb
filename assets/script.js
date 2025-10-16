@@ -59,12 +59,13 @@ enlacesFiltro.forEach(enlace => {
         enlace.parentElement.classList.add('active');
 
         cartas.forEach(carta => {
+            const columna = carta.parentElement;
             if (filtro === 'todos') {
-                carta.parentElement.parentElement.style.display = 'block';
+                columna.style.display = 'block';
             } else if (carta.classList.contains(filtro)) {
-                carta.parentElement.parentElement.style.display = 'block';
+                columna.style.display = 'block';
             } else {
-                carta.parentElement.parentElement.style.display = 'none';
+                columna.style.display = 'none';
             }
         });
     });
